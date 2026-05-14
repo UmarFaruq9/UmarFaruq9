@@ -1,48 +1,68 @@
 # AI Automation Workflow (Beginner-Friendly)
 
-Welcome 👋 — this project is a **very simple** way to learn how AI workflows are structured.
+Welcome 👋 This is a tiny learning project that shows how an AI workflow can run step-by-step.
 
-If you're new, don't worry. You only need to run one command to see it work.
+## Exactly how to run this code
 
-## 1) What is this?
+### 1) Open a terminal in this project folder
+If you're already in this folder, confirm with:
 
-This project shows a tiny pipeline with 4 steps:
+```bash
+pwd
+```
 
-1. Capture your idea
-2. Turn it into a project plan
-3. Turn milestones into tasks
-4. Print everything as a report
+You should see a path ending in `UmarFaruq9`.
 
-Think of it like a mini assembly line for ideas.
+### 2) Check Python is installed
 
-## 2) How to run it
+```bash
+python3 --version
+```
 
-From this folder, run:
+If you see something like `Python 3.x.x`, you're good.
+
+### 3) Run the program
 
 ```bash
 python3 vibecode_workflow.py
 ```
 
-You'll be asked to type your project idea.
+### 4) Type your idea when prompted
+Example input:
 
-## 3) What to edit first
+```text
+I want to automate customer support triage
+```
 
-Open `vibecode_workflow.py` and look at:
+### 5) Read the output report
+You will see:
+- your prompt
+- generated plan
+- generated tasks
 
-- `capture_prompt` → reads your idea
-- `generate_plan` → creates a simple plan dictionary
-- `build_tasks` → creates task strings
-- `print_report` → prints results
+---
 
-## 4) Beginner exercises
+## What this project demonstrates
 
-Try these one by one:
+1. Capture an idea
+2. Convert it into a simple plan
+3. Convert plan milestones into tasks
+4. Print a report
 
-- Change the default milestones in `generate_plan`
-- Add a new step called `Estimate timeline`
-- Save `context["results"]` to a JSON file
+---
 
-## 5) What this is NOT (yet)
+## If command fails
 
-This starter does **not** call real AI APIs yet.
-It is a learning scaffold so you can understand flow first.
+### Error: `python3: command not found`
+Install Python 3, then rerun.
+
+### Error: `can't open file 'vibecode_workflow.py'`
+You are in the wrong folder. Run `pwd`, then `cd` into the project directory.
+
+---
+
+## Next beginner steps
+
+- Edit milestone text in `generate_plan`
+- Add another step function
+- Save results to a JSON file

@@ -4,8 +4,23 @@ Welcome 👋 This is a tiny learning project that shows how an AI workflow can r
 
 ## Exactly how to run this code
 
+### Option A (recommended): one command
+
+```bash
+./run.sh
+```
+
+### Option B: run Python directly
+
+```bash
+python3 vibecode_workflow.py
+```
+
+---
+
+## Step-by-step (if you're brand new)
+
 ### 1) Open a terminal in this project folder
-If you're already in this folder, confirm with:
 
 ```bash
 pwd
@@ -19,50 +34,23 @@ You should see a path ending in `UmarFaruq9`.
 python3 --version
 ```
 
-If you see something like `Python 3.x.x`, you're good.
-
 ### 3) Run the program
 
 ```bash
-python3 vibecode_workflow.py
+./run.sh
 ```
 
 ### 4) Type your idea when prompted
-Example input:
+Example:
 
 ```text
 I want to automate customer support triage
 ```
 
-### 5) Read the output report
-You will see:
-- your prompt
-- generated plan
-- generated tasks
-
----
-
-## What this project demonstrates
-
-1. Capture an idea
-2. Convert it into a simple plan
-3. Convert plan milestones into tasks
-4. Print a report
-
 ---
 
 ## If command fails
 
-### Error: `python3: command not found`
-Install Python 3, then rerun.
-
-### Error: `can't open file 'vibecode_workflow.py'`
-You are in the wrong folder. Run `pwd`, then `cd` into the project directory.
-
----
-
-## Next beginner steps
-
-- Edit milestone text in `generate_plan`
-- Add another step function
-- Save results to a JSON file
+- `./run.sh: Permission denied` → run `chmod +x run.sh` once.
+- `python3: command not found` → install Python 3.
+- `can't open file 'vibecode_workflow.py'` → you are in the wrong folder.

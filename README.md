@@ -1,46 +1,33 @@
-# AI Automation Workflow (Beginner-Friendly)
+# AI Automation Workflow (Absolute Beginner Guide)
 
-If you're new, follow this exactly.
+You asked:
+- Where do I run it?
+- Where is the terminal?
+- What do I copy and paste into?
 
-## Step-by-step run guide
+This guide answers exactly that.
 
-### 1. Open terminal
-Open your terminal app.
+## Where do you run it?
+Run it on your computer **inside this project folder**:
 
-### 2. Go to this folder
-```bash
-cd /workspace/UmarFaruq9
-```
+`/workspace/UmarFaruq9`
 
-### 3. Check Python
-```bash
-python3 --version
-```
-If it prints a version, continue.
+## Where is the terminal?
+A terminal is a text window where you type commands.
 
-### 4. Make script executable (first time only)
-```bash
-chmod +x run.sh
-```
+Use one of these:
 
-### 5. Run it
-```bash
-./run.sh
-```
+1. **VS Code**: click `Terminal` → `New Terminal`
+2. **Mac**: open app `Terminal`
+3. **Windows**: open `PowerShell` or `Windows Terminal`
+4. **Linux**: open app `Terminal`
 
-### 6. Enter your idea
-When prompted, type something like:
-```text
-I want to automate invoice processing
-```
+## What do you copy and paste into?
+Paste commands into the **terminal window** (not into a Word file, browser search bar, or code file).
 
-### 7. Done
-If successful, you will see:
-```text
-✅ Workflow complete
-```
+---
 
-## Super short version
+## Copy these commands exactly (3 lines)
 
 ```bash
 cd /workspace/UmarFaruq9
@@ -48,5 +35,25 @@ chmod +x run.sh
 ./run.sh
 ```
 
-## Need copy-paste only?
-Use `QUICKSTART.md`.
+Then press Enter after each line.
+
+---
+
+## What happens next?
+The app asks:
+
+`What do you want to build with AI automation?`
+
+Type your idea and press Enter.
+
+Example:
+
+`I want to automate support tickets`
+
+---
+
+## How do I know it worked?
+You will see:
+
+`✅ Workflow complete`
+

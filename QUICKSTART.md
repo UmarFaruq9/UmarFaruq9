@@ -1,33 +1,27 @@
-# Quickstart (Copy-Paste)
+# QUICKSTART: do this exactly
 
-Use these exact commands in order.
+## 1) Open terminal
+- VS Code: `Terminal` → `New Terminal`
+- Or open Terminal/PowerShell app
 
-## Step 1: Go to the project folder
+## 2) Paste these commands into terminal
+
 ```bash
 cd /workspace/UmarFaruq9
-```
-
-## Step 2: Check files are there
-```bash
-ls
-```
-You should see `vibecode_workflow.py` and `run.sh`.
-
-## Step 3: Allow run script (only needed once)
-```bash
 chmod +x run.sh
-```
-
-## Step 4: Run the app
-```bash
 ./run.sh
 ```
 
-## Step 5: Type your idea and press Enter
+## 3) Type your idea when asked
 Example:
+
 ```text
 I want to automate support tickets
 ```
 
-## Step 6: Confirm success
-You should see `✅ Workflow complete` in output.
+## 4) Success message
+Look for:
+
+```text
+✅ Workflow complete
+```

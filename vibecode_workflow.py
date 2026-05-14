@@ -1,20 +1,26 @@
-"""Simple AI automation workflow runner for vibecoding."""
+"""Beginner-friendly workflow runner for AI automation experiments."""
 
 from dataclasses import dataclass
-from typing import Callable, Dict, Any, List
+from typing import Any, Callable, Dict, List
 
 
+# A shared dictionary passed to every workflow step.
 Context = Dict[str, Any]
+# Every step is just a function that accepts context and returns output.
 StepFn = Callable[[Context], Any]
 
 
 @dataclass
 class Step:
+    """A single workflow step with a name and a function."""
+
     name: str
     run: StepFn
 
 
 class Workflow:
+    """Runs steps in order and stores each output in context['results']."""
+
     def __init__(self, name: str, steps: List[Step]):
         self.name = name
         self.steps = steps
@@ -25,7 +31,7 @@ class Workflow:
 
         print(f"\n🚀 Running workflow: {self.name}")
         for i, step in enumerate(self.steps, start=1):
-            print(f"[{i}/{len(self.steps)}] {step.name}...")
+            print(f"[{i}/{len(self.steps)}] {step.name}")
             output = step.run(context)
             context["results"][step.name] = output
 
@@ -33,14 +39,15 @@ class Workflow:
         return context
 
 
-# --- Example step functions ---
-
 def capture_prompt(context: Context) -> str:
-    prompt = context.get("prompt", "Build an AI automation side project")
-    return prompt
+    """Step 1: Get user's idea from context (or fallback string)."""
+
+    return context.get("prompt", "Build an AI automation side project")
 
 
 def generate_plan(context: Context) -> Dict[str, Any]:
+    """Step 2: Convert idea into a tiny structured plan."""
+
     prompt = context["results"]["Capture prompt"]
     return {
         "project": "AI Workflow Assistant",
@@ -54,11 +61,15 @@ def generate_plan(context: Context) -> Dict[str, Any]:
 
 
 def build_tasks(context: Context) -> List[str]:
+    """Step 3: Convert milestones into numbered tasks."""
+
     milestones = context["results"]["Generate plan"]["milestones"]
     return [f"Task {idx + 1}: {item}" for idx, item in enumerate(milestones)]
 
 
 def print_report(context: Context) -> str:
+    """Step 4: Print a readable report to the console."""
+
     results = context["results"]
     print("\n📋 Report")
     print("- Prompt:", results["Capture prompt"])
@@ -68,8 +79,10 @@ def print_report(context: Context) -> str:
 
 
 if __name__ == "__main__":
+    user_prompt = input("What do you want to build with AI automation?\n> ").strip()
+
     workflow = Workflow(
-        name="Vibecode Automation Flow",
+        name="Beginner AI Automation Flow",
         steps=[
             Step("Capture prompt", capture_prompt),
             Step("Generate plan", generate_plan),
@@ -80,6 +93,7 @@ if __name__ == "__main__":
 
     workflow.execute(
         {
-            "prompt": "I want to code about AI automation and workflow",
+            "prompt": user_prompt
+            or "I want to code about AI automation and workflow",
         }
     )

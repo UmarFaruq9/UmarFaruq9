@@ -1,30 +1,48 @@
-# Vibecode: AI Automation Workflow Starter
+# AI Automation Workflow (Beginner-Friendly)
 
-This tiny starter project is for experimenting with AI automation ideas quickly.
+Welcome 👋 — this project is a **very simple** way to learn how AI workflows are structured.
 
-## What it does
+If you're new, don't worry. You only need to run one command to see it work.
 
-- Defines a simple workflow engine with named steps.
-- Lets each step use an LLM-powered function (or any Python callable).
-- Passes a shared context dictionary across all steps.
-- Produces a final report with step outputs.
+## 1) What is this?
 
-## Quick start
+This project shows a tiny pipeline with 4 steps:
+
+1. Capture your idea
+2. Turn it into a project plan
+3. Turn milestones into tasks
+4. Print everything as a report
+
+Think of it like a mini assembly line for ideas.
+
+## 2) How to run it
+
+From this folder, run:
 
 ```bash
 python3 vibecode_workflow.py
 ```
 
-## Workflow ideas to try
+You'll be asked to type your project idea.
 
-1. **Idea to spec**: prompt -> technical spec -> task checklist.
-2. **Code review bot**: summarize a diff -> detect risks -> suggest fixes.
-3. **Content pipeline**: draft -> rewrite -> SEO tags -> publish JSON.
-4. **Ops helper**: parse logs -> classify issues -> remediation plan.
+## 3) What to edit first
 
-## Next upgrades
+Open `vibecode_workflow.py` and look at:
 
-- Add async execution for parallelizable steps.
-- Persist run history to SQLite.
-- Add retries/backoff and failure policies.
-- Connect to real model APIs (OpenAI, etc.).
+- `capture_prompt` → reads your idea
+- `generate_plan` → creates a simple plan dictionary
+- `build_tasks` → creates task strings
+- `print_report` → prints results
+
+## 4) Beginner exercises
+
+Try these one by one:
+
+- Change the default milestones in `generate_plan`
+- Add a new step called `Estimate timeline`
+- Save `context["results"]` to a JSON file
+
+## 5) What this is NOT (yet)
+
+This starter does **not** call real AI APIs yet.
+It is a learning scaffold so you can understand flow first.
